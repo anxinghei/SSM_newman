@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+<!-- 扫描，不需要配置bean，使用注解方式开发 -->
+<!-- <context:component-scan base-package="com.itheima.assemble"/> -->
+
+<!-- 使用context命名空间，在配置文件中开启相应的注解处理器 -->
+	<context:annotation-config />
+	<bean id="beanAnotation" class="com.itheima.assemble.beanAnotationImpl"/>
+	<bean id="beanAnotationService" class="com.itheima.assemble.beanAnotationServiceImpl"/>
+	<bean id="beanAnotationController" class="com.itheima.assemble.beanAnotationController"/>
+	
+<!-- 自动装配，需要增加类属性的setter方法 ，不使用注解方式开发-->	
+<!-- 	<bean id="beanAnotationController" class="com.itheima.assemble.beanAnotationController" autowire="byName"/> -->
+
+</beans>

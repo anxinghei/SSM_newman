@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dynamicSql.CustomerMapper">
+
+<!-- if 可多个条件同时成立 -->
+	<select id="findCustomerByNameAndJobs" parameterType="com.itheima.dynamicSql.Customer" resultType="com.itheima.dynamicSql.Customer">
+		select * from t_customer where 1=1
+		<if test="username != null and username != ''">
+			and username like concat('%',#{username},'%')
+		</if>
+		<if test="jobs != null and jobs!= ''">
+			and jobs = #{jobs}
+		</if>
+	</select>
+	
+<!-- choose,when,otherwise 单一条件成立 -->
+	<select id="findCustomerByNameOrJobs" parameterType="com.itheima.dynamicSql.Customer" resultType="com.itheima.dynamicSql.Customer">
+		select * from t_customer where 1=1
+		<choose>
+			<when test="username != null and username != '' ">
+				and username like concat('%',#{username},'%')
+			</when>
+			<when test="jobs != null and jobs!= ''">
+				and jobs = #{jobs}
+			</when>
+			<otherwise>
+				and phone is not null
+			</otherwise>
+		</choose>
+	</select>
+	
+<!-- where 元素：省略 where 1=1 -->
+	<select id="findCustomerByNameAndJobsWhere" parameterType="com.itheima.dynamicSql.Customer" resultType="com.itheima.dynamicSql.Customer">
+		select * from t_customer 
+		<where>
+			<if test="username != null and username != ''">
+				and username like concat('%',#{username},'%')
+			</if>
+			<if test="jobs != null and jobs!= ''">
+				and jobs = #{jobs}
+			</if>
+		</where>
+	</select>
+	
+<!-- trim 元素：用途与 where 类似 -->	
+	<select id="findCustomerByNameAndJobsTrim" parameterType="com.itheima.dynamicSql.Customer" resultType="com.itheima.dynamicSql.Customer">
+		select * from t_customer 
+		<trim prefix="where" prefixOverrides="and">
+			<if test="username != null and username != ''">
+				and username like concat('%',#{username},'%')
+			</if>
+			<if test="jobs != null and jobs!= ''">
+				and jobs = #{jobs}
+			</if>
+		</trim>
+	</select>
+
+<!-- set 元素：字段更新，传入的更新字段不能全为空 -->	
+	<update id="updateCustomer" parameterType="com.itheima.dynamicSql.Customer" >
+		update t_customer
+		<set>
+			<if test="username != null and username != ''">
+				username = #{username},
+			</if>
+			<if test="jobs != null and jobs!= ''">
+				jobs = #{jobs},
+			</if>
+			<if test="phone != null and phone!= ''">
+				phone = #{phone},
+			</if>
+		</set>
+		where id=#{id}
+	</update>
+	
+<!-- foreach 元素：遍历元素 -->	
+	<select id="findCustomerById" parameterType="List" resultType="com.itheima.dynamicSql.Customer">
+		select * from t_customer where id in
+		<foreach collection="list" item="id" index="index" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</select>
+	
+<!-- bind 元素：字符串拼接，防SQL注入，可移植 -->	
+	<select id="findCustomerByName" parameterType="com.itheima.dynamicSql.Customer" resultType="com.itheima.dynamicSql.Customer">
+		<bind name="pattern_username" value="'%'+_parameter.getUsername()+'%'"/>
+		select * from t_customer where username like #{pattern_username}
+	</select>
+	
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="bean" class="com.itheima.bean.beanbean" scope="singleton"/>
+	<!-- 
+		singleton : Spring 默认的作用域
+					只存在一个共享的 bean 实例
+					所有对bean的请求，只要ID相匹配，就返回同一个实例
+					适合无会话状态
+		prototype : 为每个请求都创建一个新的bean实例
+					保持会话状态
+		request
+		session
+		globalSession
+		application
+		websocket
+	 -->
+
+</beans>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 静态工厂实例化 -->
+	<bean id="bean" 
+			class="com.itheima.instance.Bean_StaticFactory_factory"
+			factory-method="createBean"/>
+		
+<!-- 实例工厂方式实例化：工厂方法无需static修饰-->
+<!-- 	<bean id="beanFactory" class="com.itheima.instance.Bean_StaticFactory_factory"/> -->
+<!-- 	<bean id="bean2" factory-bean="beanFactory" factory-method="createBean"/> -->
+
+</beans>

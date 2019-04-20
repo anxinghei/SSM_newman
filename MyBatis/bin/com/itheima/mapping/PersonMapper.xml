@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapping.PersonMapper">
+	
+	<select id="findPersonById" parameterType="Integer" resultMap="IdCardWithPersonResult2">
+		select p.*,idcard.code from tb_person p,tb_idcard idcard where p.card_id=idcard.id and p.id=#{id}
+	</select>
+
+<!-- 嵌套结果 -->
+	<resultMap	type="com.itheima.mapping.Person" id="IdCardWithPersonResult">
+		<id property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="age" column="age"/>
+		<result property="sex" column="sex"/>
+		<association property="card" column="card_id" javaType="IdCard">
+			<id property="id" column="card_id"/>
+			<result property="code" column="code"/>
+		</association>
+	</resultMap>
+	
+<!-- 嵌套查询 -->
+	<resultMap	type="com.itheima.mapping.Person" id="IdCardWithPersonResult2">
+		<id property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="age" column="age"/>
+		<result property="sex" column="sex"/>
+		<association property="card" column="card_id" javaType="IdCard"
+			select="com.itheima.mapping.IdCardMapper.findCodeById" />
+	</resultMap>
+
+</mapper>

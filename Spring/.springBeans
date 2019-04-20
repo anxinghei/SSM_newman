@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.9.6.201809180658-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+		<config>src/com/itheima/instance/beanConstuctor.xml</config>
+		<config>src/com/itheima/instance/beanFactory.xml</config>
+		<config>src/com/itheima/bean/beanScope.xml</config>
+		<config>src/com/itheima/assemble/beanXml.xml</config>
+		<config>src/com/itheima/assemble/beanAnotation.xml</config>
+		<config>src/com/itheima/aop/ProxyFactory.xml</config>
+		<config>src/com/itheima/aspectJ/aspectJXml.xml</config>
+		<config>src/applicationContext.xml</config>
+		<config>src/com/itheima/jdbc/jdbc.xml</config>
+	</configs>
+	<autoconfigs>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+<!-- 配置别名 -->	
+	<typeAliases>
+		<package name="com.itheima.Dao"/>
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="com/itheima/Dao/CustomerMapper.xml" />
+		<mapper resource="com/itheima/Mapper/CustomerMapper.xml" />
+		<mapper resource="com/itheima/transaction/CustomerMapper.xml" />
+		<mapper resource="transaction/CustomerMapper.xml" />
+	</mappers>
+	
+</configuration>

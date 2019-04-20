@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="user" class="com.itheima.aop.UserImpl"/>
+	<bean id="myAspect" class="com.itheima.aop.MyAspect"/>
+<!-- 使用Spring代理工厂，指定代理实现的接口、目标对象、切面并植入环绕通知、代理方式（true：CGLIB  false:JDK） -->	
+	<bean id="userProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces" value="com.itheima.aop.User"/>
+		<property name="target" ref="user"/>
+		<property name="interceptorNames" value="myAspect"/>
+		<property name="proxyTargetClass" value="true"/>
+	</bean>
+	
+</beans>

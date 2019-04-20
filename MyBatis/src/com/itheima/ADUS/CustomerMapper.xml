@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.newman.CustomerMapper">
+	<select id="findCustomerById" parameterType="Integer" resultType="com.itheima.newman.Customer">
+		select * from t_customer where id = #{id}
+	</select>
+	
+	<select id="findCustomerByName" parameterType="String" resultType="com.itheima.newman.Customer">
+		select * from t_customer where username like concat('%',#{value},'%')
+	</select>
+	
+	<insert id="addCustomer" parameterType="com.itheima.newman.Customer">
+		insert into t_customer(username,jobs,phone) values(#{username},#{jobs},#{phone})
+	</insert>
+	
+	<update id="updateCustomer" parameterType="com.itheima.newman.Customer">
+		update t_customer set username=#{username},jobs=#{jobs},phone=#{phone} where id=#{id}
+	</update>
+	
+	<delete id="deleteCustomer" parameterType="Integer">
+		delete from t_customer where id = #{id}
+	</delete>
+	
+</mapper>

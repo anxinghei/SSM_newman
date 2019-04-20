@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="src/ant-1.10.3.jar"/>
+	<classpathentry kind="lib" path="src/ant-launcher-1.10.3.jar"/>
+	<classpathentry kind="lib" path="src/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="src/asm-7.0.jar"/>
+	<classpathentry kind="lib" path="src/aspectjweaver-1.9.2.jar"/>
+	<classpathentry kind="lib" path="src/cglib-3.2.10.jar"/>
+	<classpathentry kind="lib" path="src/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="src/javassist-3.24.1-GA.jar"/>
+	<classpathentry kind="lib" path="src/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="src/log4j-api-2.11.2.jar"/>
+	<classpathentry kind="lib" path="src/log4j-core-2.11.2.jar"/>
+	<classpathentry kind="lib" path="src/mybatis-3.5.1.jar"/>
+	<classpathentry kind="lib" path="src/ognl-3.2.10.jar"/>
+	<classpathentry kind="lib" path="src/slf4j-api-1.7.26.jar"/>
+	<classpathentry kind="lib" path="src/slf4j-log4j12-1.7.26.jar"/>
+	<classpathentry kind="lib" path="src/spring-aop-5.1.2.RELEASE.jar" sourcepath="D:/360安全浏览器下载/spring-framework-5.1.2.RELEASE/libs/spring-aop-5.1.2.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="src/spring-aspects-5.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="src/spring-beans-5.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="src/spring-context-5.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="src/spring-core-5.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="src/spring-expression-5.1.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="src/spring-jdbc-4.3.9.RELEASE.jar"/>
+	<classpathentry kind="lib" path="src/spring-tx-4.3.9.RELEASE.jar" sourcepath="D:/360安全浏览器下载/spring-framework-4.3.9.RELEASE/libs/spring-tx-4.3.9.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="src/commons-dbcp2-2.1.1.jar"/>
+	<classpathentry kind="lib" path="src/commons-pool2-2.4.2.jar"/>
+	<classpathentry kind="lib" path="src/mybatis-spring-1.3.1.jar"/>
+	<classpathentry kind="lib" path="src/mysql-connector-java-5.1.7-bin.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
