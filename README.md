@@ -1,5 +1,9 @@
-ÅäÖÃÎÄ¼ş¹¤¾ß£º×Ô¶¯Éú³ÉÅäÖÃĞÅÏ¢--STS
-°²×°·½Ê½£º
-1¡¢¸øeclipseÔö¼ÓSTS²å¼ş£ºhttps://spring.io/tools3/sts/all
-   eclipse--help--install
-2¡¢Ö±½ÓÏÂÔØSTS¹¤¾ß£¨¼¯ºÏÁËSTSµÄeclipse£©£ºhttps://spring.io/tools3/sts
+##é…ç½®æ–‡ä»¶å·¥å…·ï¼šè‡ªåŠ¨ç”Ÿæˆé…ç½®ä¿¡æ¯--STS  
+
+å®‰è£…æ–¹å¼ï¼š  
+
+1ã€ç»™eclipseå¢åŠ STSæ’ä»¶ï¼šhttps://spring.io/tools3/sts/all  
+
+   eclipse--help--install  
+   
+2ã€ç›´æ¥ä¸‹è½½STSå·¥å…·ï¼ˆé›†åˆäº†STSçš„eclipseï¼‰ï¼šhttps://spring.io/tools3/sts
