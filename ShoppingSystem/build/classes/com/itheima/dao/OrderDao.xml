@@ -50,4 +50,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			and userid = #{userid}
 		</if>
 	</select>
+	
+	<select id="findAll" resultType="com.itheima.po.Order">
+		select * from t_order
+	</select>
 </mapper>

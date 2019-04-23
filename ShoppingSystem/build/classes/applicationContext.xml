@@ -34,6 +34,19 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="configLocation" value="classpath:mybatis-config.xml" />
+		<!-- 传入分页插件 -->
+		<property name="plugins">
+			<array>
+				<bean class="com.github.pagehelper.PageInterceptor">
+					<property name="properties">
+						<props>
+							<prop key="helperDialect">mysql</prop>
+							<prop key="reasonable">true</prop>
+						</props>
+					</property>
+				</bean>
+			</array>
+		</property>
 	</bean>
 <!-- 配置mapper扫描器 -->	
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
@@ -41,5 +54,7 @@
 	</bean>
 	
 	<context:component-scan base-package="com.itheima.service"></context:component-scan>
+	
+	
 	
 </beans>

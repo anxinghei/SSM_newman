@@ -13,4 +13,6 @@ public interface OrderService {
 	public void updateOrder(Order order);
 	
 	public List<Order> queryOrder(Order order);
+	
+	public List<Order> findAll(int page,int size);
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.github.pagehelper.PageHelper;
 import com.itheima.dao.OrderDao;
 import com.itheima.po.Order;
 import com.itheima.service.OrderService;
@@ -34,5 +35,11 @@ public class OrderServiceImpl implements OrderService{
 	@Override
 	public void updateOrder(Order order) {
 		orderdao.updateOrder(order);
+	}
+	
+	@Override
+	public List<Order> findAll(int page,int size) {
+		PageHelper.startPage(page, size);
+		return orderdao.findAll();
 	}
 }

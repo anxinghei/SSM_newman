@@ -4,11 +4,17 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.github.pagehelper.PageInfo;
 import com.itheima.po.Order;
 import com.itheima.service.OrderService;
 
@@ -102,4 +108,17 @@ public class OrderController {
 			return "success";
 		}
 	}
+	
+	@RequestMapping(value="/findAll.action",method=RequestMethod.GET)
+	public String findAll(@RequestParam(name="pageNum",defaultValue="1")int page,
+			@RequestParam(name="pageSize",defaultValue="10")int size,Model mView) {
+		List<Order> orders=orderService.findAll(page, size);
+		for(Order order:orders)
+			System.out.println(order);
+		PageInfo<Order> pageInfo=new PageInfo<Order>(orders);
+		mView.addAttribute("orders",orders);
+		mView.addAttribute("pageInfo",pageInfo);
+		return "list";
+	}
+	
 }
